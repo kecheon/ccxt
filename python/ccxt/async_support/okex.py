@@ -35,6 +35,8 @@ from ccxt.base.decimal_to_precision import TRUNCATE
 from ccxt.base.decimal_to_precision import TICK_SIZE
 from ccxt.base.precise import Precise
 
+from ccxt.config import BROKER_ID
+
 
 class okex(Exchange):
 
@@ -149,18 +151,18 @@ class okex(Exchange):
                 '6M': '6Mutc',
                 '1y': '1Yutc',
             },
-            'hostname': 'www.okex.com',
+            'hostname': 'www.okx.com',
             'urls': {
                 'logo': 'https://user-images.githubusercontent.com/1294454/32552768-0d6dd3c6-c4a6-11e7-90f8-c043b64756a7.jpg',
                 'api': {
                     'rest': 'https://{hostname}',
                 },
-                'www': 'https://www.okex.com',
-                'doc': 'https://www.okex.com/docs-v5/en/',
-                'fees': 'https://www.okex.com/pages/products/fees.html',
+                'www': 'https://www.okx.com',
+                'doc': 'https://www.okx.com/docs-v5/en/',
+                'fees': 'https://www.okx.com/pages/products/fees.html',
                 # 'referral': 'https://www.okex.com/join/1888677',
                 'test': {
-                    'rest': 'https://testnet.okex.com',
+                    'rest': 'https://testnet.okx.com',
                 },
             },
             'api': {
@@ -649,7 +651,7 @@ class okex(Exchange):
                     '12': 'option',
                     '18': 'trading',  # unified trading account
                 },
-                'brokerId': 'e847386590ce4dBC',
+                'brokerId': BROKER_ID,
             },
             'commonCurrencies': {
                 # OKEX refers to ERC20 version of Aeternity(AEToken)
@@ -1680,7 +1682,7 @@ class okex(Exchange):
             #
             # 'ccy': currency['id'],  # only applicable to cross MARGIN orders in single-currency margin
             # 'clOrdId': clientOrderId,  # up to 32 characters, must be unique
-            # 'tag': tag,  # up to 8 characters
+            'tag': BROKER_ID,  # up to 8 characters
             #
             #     In long/short mode, side and posSide need to be combined
             #
